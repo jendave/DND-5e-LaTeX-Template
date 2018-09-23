@@ -1,4 +1,8 @@
 \ExplSyntaxOn
+\RequirePackage{bookman}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{fontspec}
+\RequirePackage{noto}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Font definitions
@@ -271,3 +275,14 @@
       {#2}
       {#3}
   }
+\newcommand{\dnd@FooterFont}{\normalfont\scshape}
+\newcommand{\dnd@PageNumberFont}{\normalfont}
+
+\newcommand{\dnd@CoverFont}{
+	\IfFontExistsTF{AndadaSC-Bold}{
+		\newfontfamily\coverFont{AndadaSC-Bold}
+	}{
+		\newfontfamily\coverFont{NotoSerif}
+	}
+	\coverFont
+}
