@@ -90,3 +90,4 @@
 \RequirePackage {lib/dndsidebar}    % sidebars
 \RequirePackage {lib/dndtable}      % tables
 \RequirePackage {lib/dndtoc}        % table of contents styling
+\RequirePackage {lib/dndcover}      % tables
