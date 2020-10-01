@@ -21,6 +21,7 @@
 \usepackage{shortvrb}
 \usepackage{stfloats}
 \usepackage{xtab}
+\usepackage[open,openlevel=1]{bookmark}
 
 \captionsetup[table]{labelformat=empty,font={sf,sc,bf,},skip=0pt}
 
@@ -46,7 +47,15 @@
 
 \maketitle
 
-\tableofcontents
+% \tableofcontents
+
+\setcounter{tocdepth}{1}
+\pdfbookmark{\contentsname}{toc}
+{
+	\hypersetup{hidelinks}
+	\tableofcontents
+}
+
 
 \mainmatter%
 
