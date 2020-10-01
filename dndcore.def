@@ -83,12 +83,14 @@
 
 % Main modules in alphabetical order
 \RequirePackage {lib/dndcomment}    % inline comment boxes
+\ifcsname dndbook\endcsname
+\RequirePackage {lib/dndcover}      % cover
+\fi
 \RequirePackage {lib/dndheader}     % fancy headers and footers
 \RequirePackage {lib/dndmonster}    % stat blocks
+\RequirePackage {lib/dndornament}   % table ornament
 \RequirePackage {lib/dndreadaloud}  % read-aloud text
 \RequirePackage {lib/dndsections}   % section styling and special section headers
 \RequirePackage {lib/dndsidebar}    % sidebars
 \RequirePackage {lib/dndtable}      % tables
 \RequirePackage {lib/dndtoc}        % table of contents styling
-\RequirePackage {lib/dndcover}      % tables
-\RequirePackage {lib/dndornament}   % table ornament
