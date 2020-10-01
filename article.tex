@@ -22,6 +22,7 @@
 \usepackage{stfloats}
 \usepackage{graphicx}
 \usepackage{titling}
+\usepackage[open,openlevel=1]{bookmark}
 
 \captionsetup[table]{labelformat=empty,font={sf,sc,bf,},skip=0pt}
 \DndSetThemeColor[DmgLavender]
@@ -64,6 +65,11 @@
 \posttitle{\end{center}}
 
 \begin{document}
+
+\pdfbookmark{\contentsname}{toc}
+{
+	\hypersetup{hidelinks}
+}
 
 \maketitle
 
