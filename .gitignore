@@ -10,3 +10,4 @@
 *.make
 *.temp
 *.d
+*.bak*

@@ -1,10 +1,33 @@
+\usepackage{pdfrender}
+\usepackage{overpic}
+\usepackage{changepage}
+\usepackage{fontspec}
+\usepackage{biblatex}
+\usepackage{imakeidx}
+\newfontfamily\alegreyasansbold{Alegreya Sans Bold}
+\newfontfamily\texgyrebonum{TeXGyreBonum-Bold}
+\newfontfamily\alegreyasans{Alegreya Sans}
+\renewcommand{\gilliustwo}{\alegreyasans{}}
+
+\newfontfamily\nodesto[
+	Path = fonts/,
+	Extension = .otf,
+	UprightFont = *,
+	BoldFont = * Bold,
+	ItalicFont = * Italic,
+	BoldItalicFont = * Bold Italic,
+]{Nodesto Caps Condensed}
+
+\definecolor{CharFillColor}{rgb}{1,1,1}
+
 % Front cover page
 \newcommand{\DndCoverSplotch}{img/cover-splotch}
 \newcommand{\DndCoverSplotchText}{Splotch Text}
-\newcommand{\DndSubcoverSubtitle}{Subcover Subtitle}
+%\newcommand{\DndSubcoverSubtitle}{Subcover Subtitle}
 \newcommand{\DndTitle}{Cover Title}
-\newcommand{\DndSubtitle}{Cover Subtitle}
+%\newcommand{\DndSubtitle}{Cover Subtitle}
 \newcommand{\DndTagline}{Cover Tagline}
+\newcommand{\DndCoverPageBackground}{img/cover}
 
 \newlength\mylength
 \renewcommand\cftchappresnum{\chaptername~}
@@ -59,23 +82,16 @@
 \newcommand{\DndMakeCover}{
 	\onecolumn%
 	\thispagestyle{empty}%
-	\CoverPageBackground{img/cover}
+	\CoverPageBackground{\DndCoverPageBackground}
 	\begin{center}%
-		\vspace*{-15mm}\includegraphics[width=3cm]{img/cover-logo-homebrewery}\\*\vspace*{15mm}%
-
-		\fontsize{48pt}{48pt}\selectfont%
+		\vspace*{-10mm}\includegraphics[width=3cm]{img/cover-logo-homebrewery}\\%
+		\fontsize{60pt}{60pt}\selectfont%
 		\textpdfrender{
 			TextRenderingMode=FillStroke,
 			LineWidth=1.5pt,
 			FillColor=CharFillColor,
 		}{\nodesto{\DndTitle}}\\*%
 		\normalfont\normalsize\includegraphics[width=.5\paperwidth]{img/separator}\\%
-		\fontsize{48pt}{48pt}\selectfont%
-		\textpdfrender{
-			TextRenderingMode=FillStroke,
-			LineWidth=1.5pt,
-			FillColor=CharFillColor,
-		}{\DndSubtitle}\\*%
 	\end{center}%
 	\begin{figure*}[!b]
 		\normalfont\normalsize
@@ -122,8 +138,8 @@
 		\fontsize{48pt}{48pt}\selectfont%
 		\nodesto{\bfseries{\DndTitle}}\\*%
 		\normalfont\normalsize\includegraphics[width=.5\paperwidth]{img/separator}\\%
-		\fontsize{48pt}{48pt}\selectfont%
-		\DndSubtitle\\*%
+		\fontsize{24pt}{24pt}\selectfont%
+		%\nodesto{\bfseries{\DndSubtitle}}\\*%
 		\normalfont\normalsize
 		\includegraphics[width=10cm,keepaspectratio]{img/subcover}\\
 		\LARGE\vfill%
@@ -179,7 +195,7 @@
 				TextRenderingMode=FillStroke,
 				LineWidth=0.5pt,
 				FillColor=CharFillColor,
-			}{\alegreyasansbold{\DndBackcoverDescription}}\\*%
+			}{\alegreyasans{\DndBackcoverDescription}}\\*%
 		\end{flushleft}%
 		\begin{center}%
 			\includegraphics[width=.25\paperwidth]{img/separator}\\%

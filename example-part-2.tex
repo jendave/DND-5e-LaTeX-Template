@@ -1,0 +1,94 @@
+\part{Customization}
+
+\chapter{Colors}
+
+\begin{table*}[b]
+  \caption{\DndFontTableTitle{}Colors Supported by this Package}\label{tab:colors}
+
+  \begin{tabularx}{\linewidth}{lX}
+    \textbf{Color}                  & \textbf{Description} \\
+    \rowcolor{PhbLightGreen}
+    |PhbLightGreen|                 & Light green used in PHB Part 1 (Default) \\
+    \rowcolor{PhbLightCyan}
+    |PhbLightCyan|                  & Light cyan used in PHB Part 2 \\
+    \rowcolor{PhbMauve}
+    |PhbMauve|                      & Pale purple used in PHB Part 3 \\
+    \rowcolor{PhbTan}
+    |PhbTan|                        & Light brown used in PHB appendix \\
+    \rowcolor{DmgLavender}
+    |DmgLavender|                   & Pale purple used in DMG Part 1 \\
+    \rowcolor{DmgCoral}
+    |DmgCoral|                      & Orange-pink used in DMG Part 2 \\
+    \rowcolor{DmgSlateGray}
+    |DmgSlateGray| (|DmgSlateGrey|) & Blue-gray used in PHB Part 3 \\
+    \rowcolor{DmgLilac}
+    |DmgLilac|                      & Purple-gray used in DMG appendix \\
+    \rowcolor{BrGreen}
+    |BrGreen|                       & Gray-green used for tables in Basic Rules\\
+  \end{tabularx}
+\end{table*}
+
+This package provides several global color variables to style |DndComment|, |DndReadAloud|, |DndSidebar|, and |DndTable| environments.
+
+\begin{DndTable}[header=Box Colors]{lX}
+  \textbf{Color}   & \textbf{Description} \\
+  |commentcolor|   & |DndComment| background \\
+  |readaloudcolor| & |DndReadAloud| background \\
+  |sidebarcolor|   & |DndSidebar| background \\
+  |tablecolor|     & background of even |DndTable| rows \\
+\end{DndTable}
+
+They also accept an optional color argument to set the color for a single instance. See Table~\ref{tab:colors} for a list of core book accent colors.
+
+\begin{lstlisting}
+\begin{DndTable}[color=PhbLightCyan]{cX}
+  \textbf{d8} & \textbf{Item} \\
+  1 & Small wooden button \\
+  2 & Red feather \\
+  3 & Human tooth \\
+  4 & Vial of green liquid \\
+  6 & Tasty biscuit \\
+  7 & Broken axe handle \\
+  8 & Tarnished silver locket \\
+\end{DndTable}
+\end{lstlisting}
+
+\begin{DndTable}[color=PhbLightCyan]{cX}
+  \textbf{d8} & \textbf{Item} \\
+  1 & Small wooden button \\
+  2 & Red feather \\
+  3 & Human tooth \\
+  4 & Vial of green liquid \\
+  6 & Tasty biscuit \\
+  7 & Broken axe handle \\
+  8 & Tarnished silver locket \\
+\end{DndTable}
+
+\section{Themed Colors}
+Use |\DndSetThemeColor[<color>]| to set |commentcolor|, |readaloudcolor|, |sidebarcolor|, and |tablecolor| to a specific color. Calling |\DndSetThemeColor| without an argument sets those colors to the current |themecolor|. In the following example the group limits the change to just a few boxes; after the group finishes, the colors are reverted to what they were before the group started.
+
+\begin{lstlisting}
+\begingroup
+\DndSetThemeColor[PhbMauve]
+
+\begin{DndComment}{This Comment Is in Mauve}
+  This comment is in the the new color.
+\end{DndComment}
+
+\begin{DndSidebar}{This Sidebar Is Also Mauve}
+  The sidebar is also using the new theme color.
+\end{DndSidebar}
+\endgroup
+\end{lstlisting}
+
+\begingroup
+\DndSetThemeColor[PhbMauve]
+
+\begin{DndComment}{This Comment Is in Mauve}
+  This comment is in the the new color.
+\end{DndComment}
+
+\begin{DndSidebar}{This Sidebar Is Also Mauve}
+  The sidebar is also using the new theme color.
+\end{DndSidebar}
+\endgroup
