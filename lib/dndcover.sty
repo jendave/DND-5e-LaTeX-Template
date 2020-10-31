@@ -23,11 +23,10 @@
 % Front cover page
 \newcommand{\DndCoverSplotch}{img/cover-splotch}
 \newcommand{\DndCoverSplotchText}{Splotch Text}
-%\newcommand{\DndSubcoverSubtitle}{Subcover Subtitle}
 \newcommand{\DndTitle}{Cover Title}
-%\newcommand{\DndSubtitle}{Cover Subtitle}
 \newcommand{\DndTagline}{Cover Tagline}
-\newcommand{\DndCoverPageBackground}{img/example-cover}
+\newcommand{\DndCoverImage}{img/example-frontcover}
+\newcommand{\DndSubCoverImage}{img/example-subcover}
 
 \newlength\mylength
 \renewcommand\cftchappresnum{\chaptername~}
@@ -82,7 +81,7 @@
 \newcommand{\DndMakeCover}{
 	\onecolumn%
 	\thispagestyle{empty}%
-	\CoverPageBackground{\DndCoverPageBackground}
+	\CoverPageBackground{\DndCoverImage}
 	\begin{center}%
 		\vspace*{-10mm}\includegraphics[width=3cm]{img/cover-logo-homebrewery}\\%
 		\fontsize{60pt}{60pt}\selectfont%
@@ -141,7 +140,7 @@
 		\fontsize{24pt}{24pt}\selectfont%
 		%\nodesto{\bfseries{\DndSubtitle}}\\*%
 		\normalfont\normalsize
-		\includegraphics[width=10cm,keepaspectratio]{img/subcover}\\
+		\includegraphics[width=10cm,keepaspectratio]{\DndSubCoverImage}\\
 		\LARGE\vfill%
 		%\alegreyasansbold{\DndSubcoverSubtitle}\\%
 		\vspace*{-15mm}\includegraphics[width=3cm]{img/cover-logo-homebrewery}\\*\vspace*{15mm}%
@@ -152,20 +151,20 @@
 }
 
 % Back cover page
-\newcommand{\DndBackcover}{img/example-backcover}
-\newcommand{\DndBackcoverHeader}{Header.}
-\newcommand{\DndBackcoverClose}{Closing sentence.}
-\newcommand{\DndBackcoverDescription}{Description.}
-\newcommand{\DndBackcoverLink}{\url{https://example.org}}
-\newcommand{\DndBackcoverLogo}{img/dnd-logo-homebrewery}
+\newcommand{\DndBackCoverImage}{img/example-backcover}
+\newcommand{\DndBackCoverHeader}{Header.}
+\newcommand{\DndBackCoverClose}{Closing sentence.}
+\newcommand{\DndBackCoverDescription}{Description.}
+\newcommand{\DndBackCoverLink}{\url{https://example.org}}
+\newcommand{\DndBackCoverLogo}{img/cover-logo-homebrewery}
 
-\newcommand{\DndMakeBackcover}{%
+\newcommand{\DndMakeBackCover}{%
 	\onecolumn%
 	\thispagestyle{empty}%
 	\begin{tikzpicture}[remember picture,overlay]%
-		\node[opacity=1, inner sep=0pt, anchor=east] (DndBackcover) at (current page.east)
+		\node[opacity=1, inner sep=0pt, anchor=east] (DndBackCover) at (current page.east)
 		{
-			\includegraphics[width=\paperwidth,height=\paperheight]{img/backcover-image}
+			\includegraphics[width=\paperwidth,height=\paperheight]{\DndBackCoverImage}
 		};%
 	\end{tikzpicture}
 
@@ -185,7 +184,7 @@
 				TextRenderingMode=FillStroke,
 				LineWidth=0.5pt,
 				FillColor=CharFillColor,
-			}{\nodesto{\textcolor{Backcoverheadercolor}{\DndBackcoverHeader}}}\\*%
+			}{\nodesto{\textcolor{Backcoverheadercolor}{\DndBackCoverHeader}}}\\*%
 		\end{center}
 		\begin{flushleft}%
 			\normalfont\normalsize
@@ -195,7 +194,7 @@
 				TextRenderingMode=FillStroke,
 				LineWidth=0.5pt,
 				FillColor=CharFillColor,
-			}{\alegreyasans{\DndBackcoverDescription}}\\*%
+			}{\alegreyasans{\DndBackCoverDescription}}\\*%
 		\end{flushleft}%
 		\begin{center}%
 			\includegraphics[width=.25\paperwidth]{img/separator}\\%
@@ -207,10 +206,10 @@
 				TextRenderingMode=FillStroke,
 				LineWidth=0.5pt,
 				FillColor=CharFillColor,
-			}{\alegreyasans{\DndBackcoverClose}}\\*%
+			}{\alegreyasans{\DndBackCoverClose}}\\*%
 			\LARGE\vfill%
-			\includegraphics[width=3cm]{\DndBackcoverLogo} \\%
-			\fillstroke{[1]}{[0]}{.5}{\textbf{\DndBackcoverLink}}%
+			\includegraphics[width=3cm]{\DndBackCoverLogo} \\%
+			\fillstroke{[1]}{[0]}{.5}{\textbf{\DndBackCoverLink}}%
 		\end{center}%
 	\end{multicols*}
 	\normalfont\normalsize
