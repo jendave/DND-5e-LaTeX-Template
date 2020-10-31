@@ -11,3 +11,8 @@
 *.temp
 *.d
 *.bak*
+*.bcf
+*.run.xml
+*.idx
+*.ilg
+*.ind
