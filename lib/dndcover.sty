@@ -83,7 +83,7 @@
 	\thispagestyle{empty}%
 	\CoverPageBackground{\DndCoverImage}
 	\begin{center}%
-		\vspace*{-10mm}\includegraphics[width=3cm]{img/cover-logo-homebrewery}\\%
+		\vspace*{-10mm}\includegraphics[width=3cm]{img/cover-logo}\\%
 		\fontsize{60pt}{60pt}\selectfont%
 		\textpdfrender{
 			TextRenderingMode=FillStroke,
@@ -143,7 +143,7 @@
 		\includegraphics[width=10cm,keepaspectratio]{\DndSubCoverImage}\\
 		\LARGE\vfill%
 		%\alegreyasansbold{\DndSubcoverSubtitle}\\%
-		\vspace*{-15mm}\includegraphics[width=3cm]{img/cover-logo-homebrewery}\\*\vspace*{15mm}%
+		\vspace*{-15mm}\includegraphics[width=3cm]{img/cover-logo}\\*\vspace*{15mm}%
 	\end{center}%
 	\normalfont\normalsize
 	\clearpage%
@@ -156,7 +156,7 @@
 \newcommand{\DndBackCoverClose}{Closing sentence.}
 \newcommand{\DndBackCoverDescription}{Description.}
 \newcommand{\DndBackCoverLink}{\url{https://example.org}}
-\newcommand{\DndBackCoverLogo}{img/cover-logo-homebrewery}
+\newcommand{\DndBackCoverLogo}{img/cover-logo}
 
 \newcommand{\DndMakeBackCover}{%
 	\onecolumn%
@@ -171,7 +171,7 @@
 	\begin{tikzpicture}[remember picture,overlay]%
 		\node[opacity=1, inner sep=0pt, anchor=west] (Backcover) at (current page.west)
 		{
-			\includegraphics[width=0.55\paperwidth,height=\paperheight]{img/backcover}
+			\includegraphics[width=0.55\paperwidth,height=\paperheight]{img/backcover-graphic}
 		};%
 	\end{tikzpicture}
 
