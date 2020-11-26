@@ -264,7 +264,7 @@ version is configured to do a two-column table.
 The |ornamentedtabular| allows tables similar to those used for spellcasters
 (see over page).
 
-\begin{figure*}[h!]
+\begin{figure*}[!ht]
 \begin{ornamentedtabular}{ccp{3.0cm}ccccccccccc}[title={The Full Caster}]
   & & & & & \multicolumn{9}{c}{\thead{--- Spell Slots per Spell Level ---}} \\
   \textbf{Level} & \textbf{\makecell{Proficiency\\Bonus}} & \textbf{Features} & \textbf{\makecell{Cantrips\\Known}} & \textbf{\makecell{Spells\\Known}} & \textbf{1st} & \textbf{2nd} & \textbf{3rd} & \textbf{4th} & \textbf{5th} & \textbf{6th} & \textbf{7th} & \textbf{8th} & \textbf{9th} \\
@@ -405,7 +405,6 @@ The |ornamentedtabular| allows tables similar to those used for spellcasters
 \end{DndMonster}
 
 The |DndMonster| environment is used to typeset monster and NPC stat blocks. The module supplies many functions to easily typeset the contents of the stat block
-
 
 % Monster stat block
 \begin{DndMonster}[float*=b,width=0.5\textwidth + 8pt]{Monster Foo}
